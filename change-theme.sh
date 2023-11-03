@@ -14,5 +14,4 @@ fi
 if [[ -e ~/.themes/$1/xfce-notify-4.0 ]] || [[ -e $path/themes/$1/xfce-notify-4.0 ]]
 then
 xfconf-query -c xfce4-notifyd -p /theme -t "string" -s $1
-xfce4-panel -r
 fi
