@@ -13,7 +13,7 @@ fi
 if [[ $1 != "ls" ]] && [[ -e ~/.themes/$1/gtk-3.0 ]] || [[ -e $path/themes/$1/gtk-3.0 ]]
 then
 xfconf-query -c xsettings -p /Net/ThemeName -t "string" -s $1 --create
-elif [[ $1 != "ls" ]] && [[ ! -e ~/.themes/$1/gtk-3.0 ]] || [[ ! -e $path/themes/$1/gtk-3.0 ]]
+elif [[ $1 != "ls" ]] && [[ ! -e ~/.themes/$1/gtk-3.0 ]] || [[  -e $path/themes/$1/gtk-3.0 ]]
 then
 echo "No theme by that name. Check capitalization."
 fi
