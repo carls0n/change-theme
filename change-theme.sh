@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# My other repositories: https://github.com/carls0n/
+
 [[ -z $1 ]] && echo Which theme would you like to change to? && exit
 
 [[ `uname -s` == "OpenBSD" ]] && path=/usr/local/share/
