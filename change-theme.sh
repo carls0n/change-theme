@@ -25,10 +25,16 @@ then
 xfconf-query -c xfce4-notifyd -p /theme -t "string" -s $1
 fi
 
-if [[ $1 == "ls" ]]
+if [[ $1 == "ls" ]] && [[ -d ~/.themes ]]
 then
 for file in {~/.themes/*/gtk-3.0/gtk.css,$path/themes/*/gtk-3.0/gtk.css}
 do
 ls "$file" | awk -F "/" '{print $(NF - 2)}' 
 done
+else
+for file in $path/themes/*/gtk-3.0/gtk.css
+do
+ls "$file" | awk -F "/" '{print $(NF - 2)}'
+done
+
 fi
