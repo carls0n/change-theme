@@ -31,10 +31,10 @@ for file in {~/.themes/*/gtk-3.0/gtk.css,$path/themes/*/gtk-3.0/gtk.css}
 do
 ls "$file" | awk -F "/" '{print $(NF - 2)}' 
 done
-else
+elif [[ $1 == "ls" ]] && [[ ! -d ~/.themes ]]
+then
 for file in $path/themes/*/gtk-3.0/gtk.css
 do
 ls "$file" | awk -F "/" '{print $(NF - 2)}'
 done
-
 fi
